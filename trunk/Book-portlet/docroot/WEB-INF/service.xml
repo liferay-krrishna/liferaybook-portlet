@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.mpower.springcrud">
+	<author>mpower</author>
+	<namespace>book</namespace>
+
+	<entity name="Book" local-service="true" remote-service="true" human-name="Book System" table="Book" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="bookId" type="long" primary="true" id-type="increment"/>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="bookName" type="String" />
+		
+		<column name="author" type="String" />
+		<column name="price" type="double" />
+		<column name="bookType" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="bookId" order-by="asc"/>
+			<order-column name="bookName" order-by="asc"/>
+            <order-column name="price" order-by="desc"></order-column>
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="BookName" return-type="Collection">
+			<finder-column name="bookName" comparator="LIKE"/>
+		</finder>
+	</entity>
+</service-builder>
