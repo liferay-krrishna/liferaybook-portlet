@@ -1,0 +1,1 @@
+Book potlet developed in liferay 6.2 tomcat, Liferay search conatiner  with multi row selection and Spring MVC portlet.
